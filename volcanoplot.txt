@@ -1,5 +1,3 @@
-#------------------------------------
-
 mart_gene_names = useDataset("mmusculus_gene_ensembl", mart = useMart("ENSEMBL_MART_ENSEMBL"))
 gene_names <- getBM(values = rownames(de), filters = ("ensembl_gene_id"),attributes = c("ensembl_gene_id","external_gene_name"), mart = mart_gene_names)
 a <- data.frame(row.names(de) == gene_names$ensembl_gene_id)
